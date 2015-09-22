@@ -1,10 +1,8 @@
 package EmergencyContact.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by graham on 2015/09/20.
@@ -13,17 +11,22 @@ import java.io.Serializable;
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
     private String firstName;
     private String lastName;
     private String dob;
     private String address;
     private String contact;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name="user_id") 
+        private List<Medical> medicals;
+        private List<NextOfKin> nextOfKins;
+
 
     private User() {
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
@@ -57,16 +60,14 @@ public class User implements Serializable {
     }
 
     public static class Builder {
-        private String id;
+        private Long id;
         private String firstName;
         private String lastName;
         private String dob;
         private String address;
         private String contact;
 
-        public Builder(String lastName) {
-            this.lastName = lastName;
-        }
+
 
         public Builder copy(User value) {
             this.id = value.id;
@@ -80,6 +81,11 @@ public class User implements Serializable {
 
         public Builder firstName(String value) {
             this.firstName = value;
+            return this;
+        }
+
+        public Builder lastName(String lastName) {
+            this.lastName = lastName;
             return this;
         }
 
@@ -98,9 +104,8 @@ public class User implements Serializable {
             return this;
         }
 
-        public Builder id(String value) {
-            this.id = value;
-            return this;
+        public Builder(Long id) {
+            this.id = id;
         }
 
         public User build() {
