@@ -32,8 +32,9 @@ public class HomePage {
                 .build();
         return user;
     }
+    /*
     @RequestMapping(value = "users", method = RequestMethod.GET)
     public List<User> getUsers(){
-        return service.getAllUsers();
-    }
+        return service.findById();
+    }*/
 }

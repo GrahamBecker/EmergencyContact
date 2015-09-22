@@ -1,6 +1,8 @@
 package EmergencyContact.services.Impl;
 
 import EmergencyContact.domain.NextOfKin;
+import EmergencyContact.domain.User;
+import EmergencyContact.repository.Impl.UserRepositoryImpl;
 import EmergencyContact.repository.UserRepository;
 import EmergencyContact.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,26 +10,38 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by graham on 2015/09/20.
  */
-/*
-@Service
+
 public class UserServiceImpl implements UserService{
-    @Autowired
-    private UserRepository repository;
-    @Override
-    public List<NextOfKin> getAllNextOfKin() {
-        List<NextOfKin> nok = new ArrayList<>();
-        Iterable<NextOfKin> values = repository.findAll();
-        for(NextOfKin value : values) {
-            nok.add(value);
-        }
-        return nok;
-    }
+
+    private final UserRepository repo = new UserRepositoryImpl();
+
 
     @Override
-    public List<>
-}*/
+    public User findById(String s) {
+        return repo.findById(s);
+    }
+    @Override
+    public User save(User entity){
+        return repo.save(entity);
+    }
+    @Override
+    public User update(User entity){
+        return repo.save(entity);
+    }
+    @Override
+    public void delete(User entity){
+        repo.delete(entity);
+    }
+    @Override
+    public Set<User> findAll(){
+        return (Set<User>) repo.findAll();
+    }
+
+
+}
 

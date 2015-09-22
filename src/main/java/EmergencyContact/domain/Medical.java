@@ -8,6 +8,8 @@ import java.io.Serializable;
  */
 @Embeddable
 public class Medical implements Serializable{
+    private String id;
+    private String userId;
     private String bloodType;
     private String allergies;
     private String medicalAid;
@@ -17,11 +19,15 @@ public class Medical implements Serializable{
 
     }
     public Medical(Builder builder){
+        id=builder.id;
+        userId=builder.userId;
         bloodType=builder.bloodType;
         allergies=builder.allergies;
         medicalAid=builder.medicalAid;
         medicalAidNumber=builder.medicalAidNumber;
     }
+    public String getId() {return id;}
+    public String getUserId() {return userId;}
     public String getBloodType(){
         return bloodType;
     }
@@ -36,13 +42,23 @@ public class Medical implements Serializable{
     }
 
     public static class Builder{
+        private String id;
+        private String userId;
         private String bloodType;
         private String allergies;
         private String medicalAid;
         private String medicalAidNumber;
 
-        public Builder(String bloodType){
+        public Builder(String id){
+            this.id = id;
+        }
+        public Builder userId(String userId){
+            this.userId = userId;
+            return this;
+        }
+        public Builder bloodType(String bloodType){
             this.bloodType = bloodType;
+            return this;
         }
 
         public Builder allergies(String value){
@@ -59,6 +75,8 @@ public class Medical implements Serializable{
         }
 
         public Builder copy(Medical value){
+            this.id=value.id;
+            this.userId=value.userId;
             this.bloodType=value.bloodType;
             this.allergies=value.allergies;
             this.medicalAid=value.medicalAid;
@@ -70,5 +88,6 @@ public class Medical implements Serializable{
             return new Medical(this);
         }
     }
+
 
 }

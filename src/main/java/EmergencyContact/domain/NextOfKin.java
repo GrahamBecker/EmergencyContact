@@ -7,6 +7,8 @@ import javax.persistence.Embeddable;
  */
 @Embeddable
 public class NextOfKin {
+    private String id;
+    private String userId;
     private String firstName;
     private String lastName;
     private String relationship;
@@ -17,12 +19,16 @@ public class NextOfKin {
     }
 
     public NextOfKin(Builder builder){
+        id=builder.id;
+        userId=builder.userId;
         firstName=builder.firstName;
         lastName=builder.lastName;
         relationship=builder.relationship;
         contact=builder.contact;
     }
 
+    public String getId() {return id;}
+    public String getUserId() {return userId;}
     public String getFirstName(){
         return firstName;
     }
@@ -37,13 +43,23 @@ public class NextOfKin {
     }
 
     public static class Builder{
+        private String id;
+        private String userId;
         private String firstName;
         private String lastName;
         private String relationship;
         private String contact;
 
-        public Builder(String lastName){
-            this.firstName=lastName;
+        public Builder (String value){
+            this.id=value;
+        }
+        public Builder userId(String value){
+            this.userId=value;
+            return this;
+        }
+        public Builder lastName(String value){
+            this.lastName=value;
+            return this;
         }
         public Builder firstName(String value){
             this.firstName=value;
@@ -58,6 +74,8 @@ public class NextOfKin {
             return this;
         }
         public Builder copy(NextOfKin value){
+            this.id=value.id;
+            this.userId=value.userId;
             this.firstName=value.firstName;
             this.lastName=value.lastName;
             this.relationship=value.relationship;
@@ -67,5 +85,6 @@ public class NextOfKin {
         public NextOfKin build(){
             return new NextOfKin(this);
         }
+
     }
 }
