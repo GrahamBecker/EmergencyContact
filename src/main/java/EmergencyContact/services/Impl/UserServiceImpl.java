@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService{
 
 
     @Override
-    public User findById(String s) {
+    public User findById(Long s) {
         return repo.findById(s);
     }
     @Override

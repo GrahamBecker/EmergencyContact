@@ -15,7 +15,7 @@ public class NextOfKinServiceImpl implements NextOfKinService {
 
 
     @Override
-    public NextOfKin findById(String s) {
+    public NextOfKin findById(Long s) {
         return repo.findById(s);
     }
     @Override

@@ -18,7 +18,7 @@ public class User implements Serializable {
     private String address;
     private String contact;
     @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name="user_id") 
+    @JoinColumn(name="user_id")
         private List<Medical> medicals;
         private List<NextOfKin> nextOfKins;
 

@@ -9,14 +9,15 @@ import java.util.Map;
  */
 public class UserFactory {
 
-    public static User createUser(Map<String,String> values){
+    public static User createUser(Long id, String firstname, String lastname, String dob, String address, String contact) {
 
         User user = new User
-                .Builder(values.get("lastName"))
-                .firstName(values.get("firstName"))
-                .dob(values.get("dob"))
-                .address(values.get("address"))
-                .contact(values.get("contact"))
+                .Builder(id)
+                .firstName(firstname)
+                .lastName(lastname)
+                .dob(dob)
+                .address(address)
+                .contact(contact)
                 .build();
         return user;
     }

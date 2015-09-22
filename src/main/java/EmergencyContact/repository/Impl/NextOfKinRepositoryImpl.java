@@ -12,40 +12,26 @@ import java.util.Set;
  * Created by graham on 2015/09/22.
  */
 public class NextOfKinRepositoryImpl implements NextOfKinRepository {
-    Map<String, NextOfKin> lists = new HashMap<>();
+    Map<Long, NextOfKin> lists = new HashMap<>();
 
     public NextOfKinRepositoryImpl(){
 
     }
 
+
     @Override
-    public NextOfKin findById(String s){
-        return lists.get(s);
+    public NextOfKin findById(Long s) {
+        return null;
     }
 
     @Override
-    public NextOfKin save(NextOfKin entity){
-        return lists.put(entity.getId(), entity);
+    public NextOfKin update(NextOfKin entity) {
+        return null;
     }
 
     @Override
-    public NextOfKin update(NextOfKin entity){
-        return lists.put(entity.getId(), entity);
-    }
-
-    @Override
-    public void delete(NextOfKin entity){
-        lists.remove(entity.getId());
-    }
-
-    @Override
-    public void delete(Iterable<? extends NextOfKin> iterable) {
-
-    }
-
-    @Override
-    public void deleteAll() {
-
+    public <S extends NextOfKin> S save(S s) {
+        return null;
     }
 
     @Override
@@ -54,26 +40,22 @@ public class NextOfKinRepositoryImpl implements NextOfKinRepository {
     }
 
     @Override
-    public NextOfKin findOne(String s) {
+    public NextOfKin findOne(Long aLong) {
         return null;
     }
 
     @Override
-    public boolean exists(String s) {
+    public boolean exists(Long aLong) {
         return false;
     }
 
     @Override
-    public Set<NextOfKin> findAll(){
-        Set<NextOfKin> set = new HashSet<>();
-        for(Map.Entry<String, NextOfKin> entry : lists.entrySet()){
-            set.add(entry.getValue());
-        }
-        return set;
+    public Iterable<NextOfKin> findAll() {
+        return null;
     }
 
     @Override
-    public Iterable<NextOfKin> findAll(Iterable<String> iterable) {
+    public Iterable<NextOfKin> findAll(Iterable<Long> iterable) {
         return null;
     }
 
@@ -83,7 +65,22 @@ public class NextOfKinRepositoryImpl implements NextOfKinRepository {
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(Long s) {
+
+    }
+
+    @Override
+    public void delete(NextOfKin nextOfKin) {
+
+    }
+
+    @Override
+    public void delete(Iterable<? extends NextOfKin> iterable) {
+
+    }
+
+    @Override
+    public void deleteAll() {
 
     }
 }

@@ -16,9 +16,10 @@ public class MedicalServiceImpl implements MedicalService{
 
 
     @Override
-    public Medical findById(String s) {
+    public Medical findById(Long s) {
         return repo.findById(s);
     }
+
     @Override
     public Medical save(Medical entity){
         return repo.save(entity);

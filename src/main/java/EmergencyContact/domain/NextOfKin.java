@@ -1,14 +1,16 @@
 package EmergencyContact.domain;
 
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 
 /**
  * Created by graham on 2015/09/20.
  */
-@Embeddable
+@Entity
 public class NextOfKin {
-    private String id;
-    private String userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private Long userId;
     private String firstName;
     private String lastName;
     private String relationship;
@@ -27,8 +29,8 @@ public class NextOfKin {
         contact=builder.contact;
     }
 
-    public String getId() {return id;}
-    public String getUserId() {return userId;}
+    public Long getId() {return id;}
+    public Long getUserId() {return userId;}
     public String getFirstName(){
         return firstName;
     }
@@ -43,17 +45,17 @@ public class NextOfKin {
     }
 
     public static class Builder{
-        private String id;
-        private String userId;
+        private Long id;
+        private Long userId;
         private String firstName;
         private String lastName;
         private String relationship;
         private String contact;
 
-        public Builder (String value){
-            this.id=value;
+        public Builder (Long id){
+            this.id=id;
         }
-        public Builder userId(String value){
+        public Builder userId(Long value){
             this.userId=value;
             return this;
         }

@@ -12,40 +12,26 @@ import java.util.Set;
  * Created by graham on 2015/09/22.
  */
 public class MedicalRepositroyImpl implements MedicalRepository {
-    Map<String, Medical> lists = new HashMap<>();
+    Map<Long, Medical> lists = new HashMap<>();
 
     public MedicalRepositroyImpl(){
 
     }
 
+
     @Override
-    public Medical findById(String s){
-        return lists.get(s);
+    public Medical findById(Long s) {
+        return null;
     }
 
     @Override
-    public Medical save(Medical entity){
-        return lists.put(entity.getId(), entity);
+    public Medical update(Medical entity) {
+        return null;
     }
 
     @Override
-    public Medical update(Medical entity){
-        return lists.put(entity.getId(), entity);
-    }
-
-    @Override
-    public void delete(Medical entity){
-        lists.remove(entity.getId());
-    }
-
-    @Override
-    public void delete(Iterable<? extends Medical> iterable) {
-
-    }
-
-    @Override
-    public void deleteAll() {
-
+    public <S extends Medical> S save(S s) {
+        return null;
     }
 
     @Override
@@ -54,26 +40,22 @@ public class MedicalRepositroyImpl implements MedicalRepository {
     }
 
     @Override
-    public Medical findOne(String s) {
+    public Medical findOne(Long aLong) {
         return null;
     }
 
     @Override
-    public boolean exists(String s) {
+    public boolean exists(Long aLong) {
         return false;
     }
 
     @Override
-    public Set<Medical> findAll(){
-        Set<Medical> set = new HashSet<>();
-        for(Map.Entry<String, Medical> entry : lists.entrySet()){
-            set.add(entry.getValue());
-        }
-        return set;
+    public Iterable<Medical> findAll() {
+        return null;
     }
 
     @Override
-    public Iterable<Medical> findAll(Iterable<String> iterable) {
+    public Iterable<Medical> findAll(Iterable<Long> iterable) {
         return null;
     }
 
@@ -83,7 +65,22 @@ public class MedicalRepositroyImpl implements MedicalRepository {
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(Long s) {
+
+    }
+
+    @Override
+    public void delete(Medical medical) {
+
+    }
+
+    @Override
+    public void delete(Iterable<? extends Medical> iterable) {
+
+    }
+
+    @Override
+    public void deleteAll() {
 
     }
 }

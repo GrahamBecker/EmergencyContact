@@ -7,6 +7,6 @@ import java.util.List;
 /**
  * Created by graham on 2015/09/20.
  */
-public interface UserService extends Services<User,String>{
+public interface UserService extends Services<User,Long>{
 
 }

@@ -1,19 +1,23 @@
 package EmergencyContact.domain;
 
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by graham on 2015/09/20.
  */
-@Embeddable
+@Entity
 public class Medical implements Serializable{
-    private String id;
-    private String userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private Long userId;
     private String bloodType;
     private String allergies;
     private String medicalAid;
     private String medicalAidNumber;
+
 
     private Medical(){
 
@@ -26,8 +30,8 @@ public class Medical implements Serializable{
         medicalAid=builder.medicalAid;
         medicalAidNumber=builder.medicalAidNumber;
     }
-    public String getId() {return id;}
-    public String getUserId() {return userId;}
+    public Long getId() {return id;}
+    public Long getUserId() {return userId;}
     public String getBloodType(){
         return bloodType;
     }
@@ -42,17 +46,17 @@ public class Medical implements Serializable{
     }
 
     public static class Builder{
-        private String id;
-        private String userId;
+        private Long id;
+        private Long userId;
         private String bloodType;
         private String allergies;
         private String medicalAid;
         private String medicalAidNumber;
 
-        public Builder(String id){
+        public Builder(Long id){
             this.id = id;
         }
-        public Builder userId(String userId){
+        public Builder userId(Long userId){
             this.userId = userId;
             return this;
         }
