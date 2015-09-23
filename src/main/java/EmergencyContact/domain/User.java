@@ -19,8 +19,10 @@ public class User implements Serializable {
     private String contact;
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name="user_id")
-        private List<Medical> medicals;
-        private List<NextOfKin> nextOfKins;
+    private List<Medical> medicals;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name="user_id")
+    private List<NextOfKin> nextOfKins;
 
 
     private User() {
