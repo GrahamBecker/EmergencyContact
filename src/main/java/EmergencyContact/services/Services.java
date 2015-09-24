@@ -1,5 +1,6 @@
 package EmergencyContact.services;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -15,5 +16,5 @@ public interface Services<S,ID> {
 
     public void delete(S entity);
 
-    public Set<S> findAll();
+    public List<S> findAll();
 }

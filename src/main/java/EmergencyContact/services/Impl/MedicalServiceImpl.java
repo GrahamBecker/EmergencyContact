@@ -1,23 +1,29 @@
 package EmergencyContact.services.Impl;
 
 import EmergencyContact.domain.Medical;
-import EmergencyContact.repository.Impl.MedicalRepositroyImpl;
 import EmergencyContact.repository.MedicalRepository;
 import EmergencyContact.services.MedicalService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
  * Created by graham on 2015/09/22.
  */
+@Service
 public class MedicalServiceImpl implements MedicalService{
 
-    private final MedicalRepository repo = new MedicalRepositroyImpl();
+    @Autowired
+    private MedicalRepository repo;
+    //private final MedicalRepository repo = new MedicalRepositroyImpl();
 
 
     @Override
-    public Medical findById(Long s) {
-        return repo.findById(s);
+    public Medical findById(Long id) {
+        return repo.findById(id);
     }
 
     @Override
@@ -32,8 +38,14 @@ public class MedicalServiceImpl implements MedicalService{
     public void delete(Medical entity){
         repo.delete(entity);
     }
+
     @Override
-    public Set<Medical> findAll(){
-        return (Set<Medical>) repo.findAll();
+    public List<Medical> findAll(){
+        List<Medical> allMedicals = new ArrayList<>();
+        Iterable<Medical> medicals = repo.findAll();
+        for(Medical medical : medicals){
+            allMedicals.add(medical);
+        }
+        return allMedicals;
     }
 }

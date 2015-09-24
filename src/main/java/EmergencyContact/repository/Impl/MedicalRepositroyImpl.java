@@ -11,6 +11,7 @@ import java.util.Set;
 /**
  * Created by graham on 2015/09/22.
  */
+/*
 public class MedicalRepositroyImpl implements MedicalRepository {
     Map<Long, Medical> lists = new HashMap<>();
 
@@ -83,4 +84,4 @@ public class MedicalRepositroyImpl implements MedicalRepository {
     public void deleteAll() {
 
     }
-}
+} */

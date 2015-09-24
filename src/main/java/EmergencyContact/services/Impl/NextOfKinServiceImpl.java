@@ -1,23 +1,29 @@
 package EmergencyContact.services.Impl;
 
 import EmergencyContact.domain.NextOfKin;
-import EmergencyContact.repository.Impl.NextOfKinRepositoryImpl;
 import EmergencyContact.repository.NextOfKinRepository;
 import EmergencyContact.services.NextOfKinService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
  * Created by graham on 2015/09/22.
  */
+@Service
 public class NextOfKinServiceImpl implements NextOfKinService {
 
-    private final NextOfKinRepository repo = new NextOfKinRepositoryImpl();
+    @Autowired
+    private NextOfKinRepository repo;
+   // private final NextOfKinRepository repo = new NextOfKinRepositoryImpl();
 
 
     @Override
-    public NextOfKin findById(Long s) {
-        return repo.findById(s);
+    public NextOfKin findById(Long id) {
+        return repo.findById(id);
     }
     @Override
     public NextOfKin save(NextOfKin entity){
@@ -32,7 +38,12 @@ public class NextOfKinServiceImpl implements NextOfKinService {
         repo.delete(entity);
     }
     @Override
-    public Set<NextOfKin> findAll(){
-        return (Set<NextOfKin>) repo.findAll();
+    public List<NextOfKin> findAll(){
+        List<NextOfKin> allNextOfKins = new ArrayList<>();
+        Iterable<NextOfKin> nextOfKins = repo.findAll();
+        for(NextOfKin nextOfKin : nextOfKins){
+            allNextOfKins.add(nextOfKin);
+        }
+        return allNextOfKins;
     }
 }
