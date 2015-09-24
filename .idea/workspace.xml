@@ -2,21 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50f74741-5277-4682-a171-6a2fe44c56fa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/settings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/api/MedicalPage.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/api/MedicalPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/MedicalRepository.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/MedicalRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/Impl/MedicalRepositroyImpl.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/Impl/MedicalRepositroyImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/services/Impl/MedicalServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/services/Impl/MedicalServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/api/NextOfKinPage.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/api/NextOfKinPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/NextOfKinRepository.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/NextOfKinRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/Impl/NextOfKinRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/Impl/NextOfKinRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/services/Impl/NextOfKinServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/services/Impl/NextOfKinServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/services/Services.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/services/Services.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/Impl/UserRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/repository/Impl/UserRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EmergencyContact/services/Impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/EmergencyContact/services/Impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/EmergencyContact/domain/UserTest.java" afterPath="$PROJECT_DIR$/src/test/java/EmergencyContact/domain/UserTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="EmergencyContact.iws" />
@@ -789,7 +774,7 @@
       <workItem from="1442846806487" duration="8740000" />
       <workItem from="1442935345593" duration="9437000" />
       <workItem from="1443075714047" duration="1316000" />
-      <workItem from="1443080963423" duration="7727000" />
+      <workItem from="1443080963423" duration="8960000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1442754563556</created>
@@ -851,11 +836,17 @@
       <option name="project" value="LOCAL" />
       <updated>1443083145680</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changes made for OPENSHIFT">
+      <created>1443090821959</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1443090821959</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38328000" />
+    <option name="totallyTimeSpent" value="39561000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -917,7 +908,8 @@
     <MESSAGE value="Changes to factory and domain" />
     <MESSAGE value="Changes to API" />
     <MESSAGE value="Changes to domain." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes to domain." />
+    <MESSAGE value="Changes made for OPENSHIFT" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes made for OPENSHIFT" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
