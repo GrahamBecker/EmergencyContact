@@ -11,6 +11,7 @@ import java.util.Set;
  * Created by graham on 2015/09/22.
  */
 public class NextOfKinServiceImpl implements NextOfKinService {
+
     private final NextOfKinRepository repo = new NextOfKinRepositoryImpl();
 
 

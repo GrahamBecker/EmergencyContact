@@ -15,7 +15,7 @@ import java.util.List;
  * Created by graham on 2015/09/22.
  */
 @RestController
-@RequestMapping("/api/**")
+@RequestMapping("/api/medical/**")
 public class MedicalPage {
     @Autowired
     private MedicalService service;

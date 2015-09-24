@@ -12,7 +12,6 @@ public class Medical implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long userId;
     private String bloodType;
     private String allergies;
     private String medicalAid;
@@ -24,14 +23,12 @@ public class Medical implements Serializable{
     }
     public Medical(Builder builder){
         id=builder.id;
-        userId=builder.userId;
         bloodType=builder.bloodType;
         allergies=builder.allergies;
         medicalAid=builder.medicalAid;
         medicalAidNumber=builder.medicalAidNumber;
     }
     public Long getId() {return id;}
-    public Long getUserId() {return userId;}
     public String getBloodType(){
         return bloodType;
     }
@@ -47,7 +44,6 @@ public class Medical implements Serializable{
 
     public static class Builder{
         private Long id;
-        private Long userId;
         private String bloodType;
         private String allergies;
         private String medicalAid;
@@ -56,10 +52,7 @@ public class Medical implements Serializable{
         public Builder(Long id){
             this.id = id;
         }
-        public Builder userId(Long userId){
-            this.userId = userId;
-            return this;
-        }
+
         public Builder bloodType(String bloodType){
             this.bloodType = bloodType;
             return this;
@@ -80,7 +73,6 @@ public class Medical implements Serializable{
 
         public Builder copy(Medical value){
             this.id=value.id;
-            this.userId=value.userId;
             this.bloodType=value.bloodType;
             this.allergies=value.allergies;
             this.medicalAid=value.medicalAid;

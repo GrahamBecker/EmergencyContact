@@ -10,7 +10,6 @@ public class NextOfKin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long userId;
     private String firstName;
     private String lastName;
     private String relationship;
@@ -22,7 +21,6 @@ public class NextOfKin {
 
     public NextOfKin(Builder builder){
         id=builder.id;
-        userId=builder.userId;
         firstName=builder.firstName;
         lastName=builder.lastName;
         relationship=builder.relationship;
@@ -30,7 +28,6 @@ public class NextOfKin {
     }
 
     public Long getId() {return id;}
-    public Long getUserId() {return userId;}
     public String getFirstName(){
         return firstName;
     }
@@ -46,7 +43,6 @@ public class NextOfKin {
 
     public static class Builder{
         private Long id;
-        private Long userId;
         private String firstName;
         private String lastName;
         private String relationship;
@@ -55,10 +51,7 @@ public class NextOfKin {
         public Builder (Long id){
             this.id=id;
         }
-        public Builder userId(Long value){
-            this.userId=value;
-            return this;
-        }
+
         public Builder lastName(String value){
             this.lastName=value;
             return this;
@@ -77,7 +70,6 @@ public class NextOfKin {
         }
         public Builder copy(NextOfKin value){
             this.id=value.id;
-            this.userId=value.userId;
             this.firstName=value.firstName;
             this.lastName=value.lastName;
             this.relationship=value.relationship;

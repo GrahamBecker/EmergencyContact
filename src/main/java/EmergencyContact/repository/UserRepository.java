@@ -10,4 +10,8 @@ public interface UserRepository extends CrudRepository<User, Long> {
     User findById(Long s);
 
     User update(User entity);
+
+    Iterable<User> findAll(Iterable<Long> iterable);
+
+    void delete(Long s);
 }
